@@ -1,4 +1,4 @@
-# 🚀 NSO‑Rocket
+# 🚀 nso‑rocket
 ![CI](https://github.com/keewillidevnet/NSO-Rocket/actions/workflows/tests.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![AGNTCY](https://img.shields.io/badge/AGNTCY-compatible-orange)
