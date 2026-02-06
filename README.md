@@ -18,12 +18,39 @@
 
 ## Overview
 
-**NSO‑Rocket** supercharges Cisco NSO deployments by integrating:
-- **n8n Workflows** for automation
-- **AGNTCY Multi‑Agent Framework** for intelligence & orchestration
-- **Async + Topology‑Aware Drift Detection** for performance
-- **Dashboards** for real‑time visibility
+**nso-rocket** is designed as a modular automation and execution layer for Cisco NSO, combining workflow automation, agent-based intelligence, and observability tooling through well defined integration.
 
+### n8n — Workflow Automation & Event Handling
+nso-rocket uses **n8n** as the workflow and event-orchestration layer. n8n is responsible for:
+- Triggering NSO workflows based on external events (API calls, schedules, webhooks)
+- Coordinating multi-step automation such as inventory discovery, service deployment, and drift checks
+- Handling retries, branching logic, and asynchronous execution outside of NSO itself
+
+In this architecture, n8n acts as the **automation conductor**, while nso-rocket provides the NSO-specific logic and execution steps that n8n invokes.
+
+n8n: https://n8n.io/
+
+### AGNTCY — Agent-Based Intelligence & Orchestration
+nso-rocket integrates with the **AGNTCY Multi-Agent Framework** to support agent-driven decision-making and orchestration. AGNTCY agents can:
+- Decide *when* to run nso-rocket workflows (e.g., based on detected drift, policy signals, or intent)
+- Select which automation paths to execute (read-only validation vs. remediation)
+- Coordinate multiple automation actions across systems while treating nso-rocket as a reliable execution backend
+
+In this model, AGNTCY provides the **reasoning and coordination layer**, while nso-rocket serves as the **deterministic, auditable automation executor** for network changes via Cisco NSO.
+
+AGNTCY: https://github.com/AGNTCY
+
+### Grafana — Observability, Reporting, and Audit Visibility
+nso-rocket integrates with **Grafana** for visualization and operational insight into automation activity. Workflow outputs from nso-rocket (such as execution status, device counts, drift results, and timing data) can be surfaced as metrics or logs and visualized in Grafana dashboards.
+
+This enables teams to:
+- Monitor automation health and success rates over time
+- Visualize drift trends and affected services/devices
+- Provide audit-friendly views for change management and compliance reporting
+
+Grafana: https://grafana.com/grafana/
+
+Together, n8n, AGNTCY, and Grafana allow nso-rocket to participate cleanly in agent driven, event based network operations while keeping Cisco NSO as the authoritative source of truth.
 Designed for **enterprise network teams** and **automation engineers** who need speed, intelligence, and reliability in their NSO environments.
 
 ---
