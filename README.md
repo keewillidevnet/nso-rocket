@@ -1,4 +1,6 @@
 # 🚀 nso‑rocket
+![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)
+![Run in Cisco Cloud IDE](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-runable-icon.svg)
 ![CI](https://github.com/keewillidevnet/NSO-Rocket/actions/workflows/tests.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![AGNTCY](https://img.shields.io/badge/AGNTCY-compatible-orange)
